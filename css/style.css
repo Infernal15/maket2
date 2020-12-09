@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template: 
+    "head" auto
+    "nav" 80px
+    "slider" 400px
+    "content" minmax(761px, 100vh)
+    "footer" auto
+    /1fr
+    ;
+}
+
+p, a, li {
+    font-size: 14px;
+    line-height: 22px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.head {
+    grid-area: head;
+    background-color: #dbdbdb;
+    min-height: 230px;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.head-content {
+    justify-content: center;
+    width: 980px;
+    padding:  0 10px;
+    margin: auto;
+    padding-top: 65px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 65px ;
+}
+
+@font-face{
+    font-family: 'Open Sans Condensed', sans-serif;
+    src: url('../fonts/OpenSansCondensed-Light.woff') format('woff');
+}
+
+.head-content img {
+    grid-area: 1 / 1 / 2 / 2;
+    justify-self: flex-start;
+    width: 273px;
+    height: 100px;
+}
+
+.number {
+    grid-area: 1 / 2 / 2 / 3;
+    justify-self: flex-end;
+}
+
+.number p{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 40px;
+    line-height: 46px;
+    color: #767676;
+}
+
+.menu {
+    grid-area: nav;
+    min-height: 80px;
+}
+
+.nav-bar {
+    display: flex;
+    background-color: #767676;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-bar-list {
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 26px 10px;
+    max-width: 980px;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-bar-list li a {
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-bar-list li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    text-decoration-color: #fff;
+}
+
+.nav-bar-list li + li {
+    padding-left: 22px;
+    margin-left: 22px;
+    border-left: 1px solid #fff;
+}
+
+.main-slider {
+    grid-area: slider;
+    background-image: url(/images/Слой_6.png);
+    background-color: #f8f8f8;
+    height: 400px;
+}
+
+.slider {
+    width: 80vw;
+    max-height: 400px;
+    padding: 10px;
+    margin: auto;
+}
+
+.slick-slide {
+  margin: 0px 20px;
+}
+
+.slick-slide img {
+  width: 100%;
+  max-width: 443px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+
+.slick-slide {
+  transition: all ease-in-out .3s;
+  opacity: .2;
+}
+
+.slick-active {
+  opacity: .5;
+}
+
+.slick-current {
+  opacity: 1;
+}
+
+.slick-prev::before, .slick-next::before {
+    color: #000;
+}
+
+.slick-dots {
+    position: static;
+}
+
+.main-content {
+    grid-area: content;
+    width: 980px;
+    padding: 0 10px;
+    margin: 30px auto 195px;
+    display: flex;
+    justify-content: space-between;
+    word-wrap: break-word;
+    word-break: break-all;
+    
+}
+
+.news {
+    background-color: #767676;
+    width: 350px;
+    height: 100%;
+    padding: 25px 52px 100px 33px;
+    color: #ffffff;
+}
+
+.news > p:first-child {
+    font-size: 40px;
+    letter-spacing: 1px;
+    padding-bottom: 11px;
+}
+
+.news > a {
+    margin-top: 30px;
+    float: right;
+    color: #ffffff;
+}
+
+.news section {
+    margin-top: 23px;
+    letter-spacing: 0.35px;
+}
+
+.news section p{
+    font-style: italic;
+}
+
+.news section a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.main-aside {
+    width: 569px;
+    height: 493px;
+    padding: 22px 0 0 20px;
+}
+
+.main-aside p:first-child {
+    font-size: 40px;
+    letter-spacing: 1px;
+}
+
+.main-aside p {
+    font-size: 15px;
+    color: #767676;
+}
+
+.main-aside p + p {
+   margin-top: 27px;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #767676;
+}
+
+.footer-content {
+    width: 980px;
+    padding: 50px 10px;
+    margin: auto;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-nav-bar-list li {
+    list-style: none;
+}
+
+.footer-nav-bar-list li a {
+    line-height: 26px;
+    color: #fff;;
+}
+
+.footer-logo p {
+    display: inline-block;
+    margin-left: 9px;
+    letter-spacing: 0.35px;
+}
